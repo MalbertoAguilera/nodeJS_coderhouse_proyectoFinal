@@ -3,7 +3,7 @@ const config = require("../../config");
 const { asPOJO, renameField, removeField } = require("../../utils/objectUtils");
 
 
-mongoose.connect(config.module.mongodb.cnxStr, config.module.mongodb.options);
+mongoose.connect(config.mongodb.cnxStr, config.mongodb.options);
 mongoose.connection.on("open", ()=>{
     console.log("CONEXION EXITOSA");
 })

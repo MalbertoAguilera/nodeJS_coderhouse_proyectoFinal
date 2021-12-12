@@ -1,4 +1,4 @@
-exports.module = {
+module.exports = {
   fileSystem: {
     path: "./DB",
   },

@@ -9,7 +9,7 @@ class DaoCartMongoDb extends ContenedorMongoDb {
     }
 
     async save(cart = { products: [] }) {
-        return super.guardar(cart);
+        return super.save(cart);
     }
 }
 
