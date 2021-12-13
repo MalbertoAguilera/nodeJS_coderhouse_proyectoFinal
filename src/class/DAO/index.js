@@ -1,6 +1,6 @@
 let productsDao;
 let cartsDao;
-let storage = "mongodb";
+let storage = "firebase";
 
 switch (storage) {
     case 'json':
@@ -11,14 +11,15 @@ switch (storage) {
         // carritosDao = new CarritosDaoArchivo()
         break
     case 'firebase':
-        // const { default: ProductosDaoFirebase } = await import('./productos/ProductosDaoFirebase.js')
+        const DaoProductsFirebase = require("./Products/DaoProductsFirebase");
+        const DaoCartsFirebase = require("./Cart/DaoCartsFirebase");
         // const { default: CarritosDaoFirebase } = await import('./carritos/CarritosDaoFirebase.js')
 
-        // productosDao = new ProductosDaoFirebase()
-        // carritosDao = new CarritosDaoFirebase()
+        productsDao = new DaoProductsFirebase()
+        cartsDao = new DaoCartsFirebase()
         break
     case 'mongodb':
-        const  DaoProductsMongoDb = require('./Products/DaoProductsMongoDb');
+        const DaoProductsMongoDb = require('./Products/DaoProductsMongoDb');
         const DaoCartsMongoDb = require('./Cart/DaoCartsMongoDb');
 
         productsDao = new DaoProductsMongoDb();

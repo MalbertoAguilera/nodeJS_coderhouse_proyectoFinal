@@ -3,6 +3,7 @@ const { Router } = express;
 const routerProducts = new Router();
 const { productsDao } = require("../class/DAO/index");
 
+
 routerProducts.get("/", async (req, res) => {
   const products = await productsDao.getAll();
   res.json(products);
