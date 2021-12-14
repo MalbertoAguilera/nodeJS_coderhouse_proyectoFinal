@@ -1,10 +1,10 @@
-const getData = require("../helpers/getData");
-const isInArray = require("../helpers/isInArray");
-const writeData = require("../helpers/writeData");
+const getData = require("../../helpers/getData");
+const isInArray = require("../../helpers/isInArray");
+const writeData = require("../../helpers/writeData");
 const moment = require("moment");
 const now = moment().format("DD/MM/YYYY HH:mm:ss");
 
-class Contenedor {
+class ContenedorFileSystem {
   constructor(file) {
     this.file = file;
   }
@@ -81,4 +81,4 @@ class Contenedor {
   }
 }
 
-module.exports = Contenedor;
+module.exports = ContenedorFileSystem;

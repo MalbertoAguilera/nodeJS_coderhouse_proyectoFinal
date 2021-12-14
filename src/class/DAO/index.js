@@ -1,20 +1,19 @@
 let productsDao;
 let cartsDao;
-let storage = "firebase";
+let storage = "json";
 
 switch (storage) {
     case 'json':
-        // const { default: ProductosDaoArchivo } = await import('./productos/ProductosDaoArchivo.js')
-        // const { default: CarritosDaoArchivo } = await import('./carritos/CarritosDaoArchivo.js')
-
-        // productosDao = new ProductosDaoArchivo()
-        // carritosDao = new CarritosDaoArchivo()
+        const DaoProductsFileSystem = require("./Products/DaoProductsFileSystem");
+        const DaoCartsFileSystem = require("./Cart/DaoCartsFileSystem");
+        
+        productsDao = new DaoProductsFileSystem();
+        cartsDao = new DaoCartsFileSystem();
         break
     case 'firebase':
         const DaoProductsFirebase = require("./Products/DaoProductsFirebase");
         const DaoCartsFirebase = require("./Cart/DaoCartsFirebase");
-        // const { default: CarritosDaoFirebase } = await import('./carritos/CarritosDaoFirebase.js')
-
+     
         productsDao = new DaoProductsFirebase()
         cartsDao = new DaoCartsFirebase()
         break
@@ -26,7 +25,7 @@ switch (storage) {
         cartsDao = new DaoCartsMongoDb();
 
         break
-    case 'mariadb':
+    // case 'mariadb':
     //     const { default: ProductosDaoMariaDb } = await import('./productos/ProductosDaoMariaDb.js')
     //     const { default: CarritosDaoMariaDb } = await import('./carritos/CarritosDaoMariaDb.js')
 
@@ -46,7 +45,7 @@ switch (storage) {
 
     //     productosDao = new ProductosDaoMem()
     //     carritosDao = new CarritosDaoMem()
-        break
+        // break
 }
 
 module.exports = { productsDao, cartsDao };

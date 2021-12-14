@@ -22,21 +22,5 @@ module.exports = {
     "token_uri": "https://oauth2.googleapis.com/token",
     "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-enc67%40nodejs-coderhouse-pf.iam.gserviceaccount.com"
-  },
-  sqlite3: {
-    client: "sqlite3",
-    connection: {
-      filename: `./DB/ecommerce.sqlite`,
-    },
-    useNullAsDefault: true,
-  },
-  mariaDb: {
-    client: "mysql",
-    connection: {
-      host: "localhost",
-      user: "coderhouse",
-      password: "coderhouse",
-      database: "coderhouse",
-    },
-  },
+  }
 };
